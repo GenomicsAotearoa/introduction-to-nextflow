@@ -10,25 +10,35 @@
         <meta name="author" content="GA & NeSI">
       
       
-        <link rel="canonical" href="https://genomicsaotearoa.github.io/AGM-workshop-2023/session_1/1_introToNextflow/">
+        <link rel="canonical" href="https://genomicsaotearoa.github.io/introduction-to-nextflow/session_1/1_introToNextflow/">
+      
+      
+        <link rel="prev" href="../0_kickoff/">
+      
+      
+        <link rel="next" href="../../session_2/0_sessionOverview/">
+      
       
       <link rel="icon" href="../../images/nesi_ga.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.19">
     
     
       
-        <title>Introduction to Nextflow - Genomics Aotearoa AGM Training Workshop</title>
+        <title>Introduction to Nextflow - Genomics Aotearoa Introduction to Nextflow Workshop</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
-        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
+
+
     
+    
+      
     
     
       
@@ -42,10 +52,11 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -58,11 +69,8 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="custom" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
   
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -88,21 +96,24 @@
 <!-- Original Header -->
 
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Genomics Aotearoa AGM Training Workshop" class="md-header__button md-logo" aria-label="Genomics Aotearoa AGM Training Workshop" data-md-component="logo">
+    <a href="../.." title="Genomics Aotearoa Introduction to Nextflow Workshop" class="md-header__button md-logo" aria-label="Genomics Aotearoa Introduction to Nextflow Workshop" data-md-component="logo">
       
   <img src="../../images/nesi_ga.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
+      
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Genomics Aotearoa AGM Training Workshop
+            Genomics Aotearoa Introduction to Nextflow Workshop
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -115,40 +126,49 @@
       </div>
     </div>
     
-      <form class="md-header__option" data-md-component="palette">
-        
-          
-          
-          <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="" data-md-color-primary="custom" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
-          
-            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_3" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
-            </label>
-          
-        
-          
-          
-          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
-          
-            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
-            </label>
-          
-        
-          
-          
-          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent=""  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_3">
-          
-            <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
-            </label>
-          
-        
-      </form>
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
       <label class="md-header__button md-icon" for="__search">
+        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
@@ -157,12 +177,15 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
+        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -174,7 +197,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -183,13 +206,13 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/GenomicsAotearoa/AGM-workshop-2023" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/GenomicsAotearoa/introduction-to-nextflow" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
-    GenomicsAotearoa/AGM-workshop-2023
+    GenomicsAotearoa/introduction-to-nextflow
   </div>
 </a>
       </div>
@@ -216,24 +239,25 @@
                     
 
 
+
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Genomics Aotearoa AGM Training Workshop" class="md-nav__button md-logo" aria-label="Genomics Aotearoa AGM Training Workshop" data-md-component="logo">
+    <a href="../.." title="Genomics Aotearoa Introduction to Nextflow Workshop" class="md-nav__button md-logo" aria-label="Genomics Aotearoa Introduction to Nextflow Workshop" data-md-component="logo">
       
   <img src="../../images/nesi_ga.png" alt="logo">
 
     </a>
-    Genomics Aotearoa AGM Training Workshop
+    Genomics Aotearoa Introduction to Nextflow Workshop
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/GenomicsAotearoa/AGM-workshop-2023" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/GenomicsAotearoa/introduction-to-nextflow" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
-    GenomicsAotearoa/AGM-workshop-2023
+    GenomicsAotearoa/introduction-to-nextflow
   </div>
 </a>
     </div>
@@ -242,14 +266,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        Home
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
       </a>
     </li>
   
@@ -257,122 +286,172 @@
     
       
       
-      
-
+  
   
   
   
     
+    
+    
       
+        
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2">
-          Setup
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Setup" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
-          Setup
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../setup/setup/" class="md-nav__link">
-        Log into Nesi Jupyter
+        
+  
+  <span class="md-ellipsis">
+    Log into Nesi Jupyter
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../0_kickoff/" class="md-nav__link">
-        Setup your environment
+        
+  
+  <span class="md-ellipsis">
+    Setup your environment
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
   
   
     
   
   
+  
+    
+    
     
       
+        
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_3">
-          Session 1
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Session 1" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
-          Session 1
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
           
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Session 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Session 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
   
   
     
+  
   
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Introduction to Nextflow
+          
+  
+  <span class="md-ellipsis">
+    Introduction to Nextflow
+  </span>
+  
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Introduction to Nextflow
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Nextflow
+  </span>
+  
+
       </a>
       
         
@@ -392,77 +471,99 @@
       
         <li class="md-nav__item">
   <a href="#what-is-nextflow" class="md-nav__link">
-    What is Nextflow?
+    <span class="md-ellipsis">
+      What is Nextflow?
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#processes-and-channels" class="md-nav__link">
-    Processes and Channels
+    <span class="md-ellipsis">
+      Processes and Channels
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#execution-abstraction" class="md-nav__link">
-    Execution abstraction
+    <span class="md-ellipsis">
+      Execution abstraction
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#nextflow-cli" class="md-nav__link">
-    Nextflow CLI
+    <span class="md-ellipsis">
+      Nextflow CLI
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#nextflow-options-and-commands" class="md-nav__link">
-    Nextflow options and commands
+    <span class="md-ellipsis">
+      Nextflow options and commands
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#managing-your-environment" class="md-nav__link">
-    Managing your environment
+    <span class="md-ellipsis">
+      Managing your environment
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#executing-a-pipeline" class="md-nav__link">
-    Executing a pipeline
+    <span class="md-ellipsis">
+      Executing a pipeline
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#executing-a-revision" class="md-nav__link">
-    Executing a revision
+    <span class="md-ellipsis">
+      Executing a revision
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#nextflow-log" class="md-nav__link">
-    Nextflow log
+    <span class="md-ellipsis">
+      Nextflow log
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#execution-cache-and-resume" class="md-nav__link">
-    Execution cache and resume
+    <span class="md-ellipsis">
+      Execution cache and resume
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#listing-and-dropping-cached-pipelines" class="md-nav__link">
-    Listing and dropping cached pipelines
+    <span class="md-ellipsis">
+      Listing and dropping cached pipelines
+    </span>
   </a>
   
 </li>
@@ -474,244 +575,347 @@
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
+  
   
   
   
     
+    
+    
       
+        
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4">
-          Session 2
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Session 2" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
-          Session 2
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Session 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Session 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../session_2/0_sessionOverview/" class="md-nav__link">
-        Session two: nf-core and pipelines
+        
+  
+  <span class="md-ellipsis">
+    Session two: nf-core and pipelines
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../session_2/1_introTo_nfCore/" class="md-nav__link">
-        Introduction to nf-core
+        
+  
+  <span class="md-ellipsis">
+    Introduction to nf-core
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../session_2/2_pipelineStructure/" class="md-nav__link">
-        Pipeline structure
+        
+  
+  <span class="md-ellipsis">
+    Pipeline structure
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../session_2/3_sarekPipeline/" class="md-nav__link">
-        The Sarek pipeline
+        
+  
+  <span class="md-ellipsis">
+    The Sarek pipeline
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../session_2/4_runConfiguration/" class="md-nav__link">
-        Configuring your run
+        
+  
+  <span class="md-ellipsis">
+    Configuring your run
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
+  
   
   
   
     
+    
+    
       
+        
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5">
-          Session 3
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Session 3" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
-          <span class="md-nav__icon md-icon"></span>
-          Session 3
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Session 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Session 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../session_3/0_homeStretchOverview/" class="md-nav__link">
-        Session three overview
+        
+  
+  <span class="md-ellipsis">
+    Session three overview
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../session_3/1_configFiles/" class="md-nav__link">
-        Configuration basics
+        
+  
+  <span class="md-ellipsis">
+    Configuration basics
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../session_3/2_configuration/" class="md-nav__link">
-        Metrics and reports
+        
+  
+  <span class="md-ellipsis">
+    Metrics and reports
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
+  
   
   
   
     
+    
+    
       
+        
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_6">
-          Appendix
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Appendix" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
-          <span class="md-nav__icon md-icon"></span>
-          Appendix
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Appendix
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Appendix
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../session_3/3_appendix/" class="md-nav__link">
-        Appendix
+        
+  
+  <span class="md-ellipsis">
+    Appendix
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -744,77 +948,99 @@
       
         <li class="md-nav__item">
   <a href="#what-is-nextflow" class="md-nav__link">
-    What is Nextflow?
+    <span class="md-ellipsis">
+      What is Nextflow?
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#processes-and-channels" class="md-nav__link">
-    Processes and Channels
+    <span class="md-ellipsis">
+      Processes and Channels
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#execution-abstraction" class="md-nav__link">
-    Execution abstraction
+    <span class="md-ellipsis">
+      Execution abstraction
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#nextflow-cli" class="md-nav__link">
-    Nextflow CLI
+    <span class="md-ellipsis">
+      Nextflow CLI
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#nextflow-options-and-commands" class="md-nav__link">
-    Nextflow options and commands
+    <span class="md-ellipsis">
+      Nextflow options and commands
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#managing-your-environment" class="md-nav__link">
-    Managing your environment
+    <span class="md-ellipsis">
+      Managing your environment
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#executing-a-pipeline" class="md-nav__link">
-    Executing a pipeline
+    <span class="md-ellipsis">
+      Executing a pipeline
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#executing-a-revision" class="md-nav__link">
-    Executing a revision
+    <span class="md-ellipsis">
+      Executing a revision
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#nextflow-log" class="md-nav__link">
-    Nextflow log
+    <span class="md-ellipsis">
+      Nextflow log
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#execution-cache-and-resume" class="md-nav__link">
-    Execution cache and resume
+    <span class="md-ellipsis">
+      Execution cache and resume
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#listing-and-dropping-cached-pipelines" class="md-nav__link">
-    Listing and dropping cached pipelines
+    <span class="md-ellipsis">
+      Listing and dropping cached pipelines
+    </span>
   </a>
   
 </li>
@@ -827,14 +1053,14 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-  <a href="https://github.com/GenomicsAotearoa/AGM-workshop-2023/edit/master/docs/session_1/1_introToNextflow.md" title="Edit this page" class="md-content__button md-icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+                  
 
+  
+  
 
 
 <h1 id="introduction-to-nextflow">Introduction to Nextflow<a class="headerlink" href="#introduction-to-nextflow" title="Permanent link">&para;</a></h1>
@@ -893,7 +1119,7 @@
 <h2 id="nextflow-options-and-commands">Nextflow options and commands<a class="headerlink" href="#nextflow-options-and-commands" title="Permanent link">&para;</a></h2>
 <p>Nextflow provides a robust command line interface for the management and execution of pipelines. The top-level interface consists of options and commands.</p>
 <p>You can list Nextflow options and commands with the <code>-h</code> option:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nextflow -h
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nextflow<span class="w"> </span>-h
 </code></pre></div>
 <div class="highlight"><span class="filename">Output</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="go">Usage: nextflow [options] COMMAND [arg...]</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
@@ -920,7 +1146,7 @@
 </code></pre></div>
 <p>Options for a commands can also be viewed by appending the -help option to a Nextflow command.</p>
 <p>For example, options for the the run command can be viewed:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nextflow run -help
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>-help
 </code></pre></div>
 <div class="highlight"><span class="filename">Output</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="go">Execute a pipeline project</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="go">Usage: run [options] Project name or repository url</span>
@@ -955,7 +1181,7 @@
 <details class="success">
 <summary>Solution</summary>
 <p>You can find out which version of Nextflow you are using by executing:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nextflow -version
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nextflow<span class="w"> </span>-version
 </code></pre></div>
 <p>You should see the following:</p>
 <div class="highlight"><span class="filename">Output</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="go">N E X T F L O W</span>
@@ -970,7 +1196,7 @@
 <p>You can use <a href="https://www.nextflow.io/docs/latest/config.html#environment-variables">environment variables</a> to control the Nextflow runtime and the underlying Java virtual machine. These variables can be exported before running a pipeline and will be interpreted by Nextflow.</p>
 <p>For most users, Nextflow will work without setting any environment variables. However, to improve reproducibility and to optimise your resources, you will benefit from establishing some of these.</p>
 <p>For example, for consistency, it is good practice to pin the version of Nextflow you are using with the <code>NXF_VER</code> variable:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">export</span> <span class="nv">NXF_VER</span><span class="o">=</span>&lt;version number&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">NXF_VER</span><span class="o">=</span>&lt;version<span class="w"> </span>number&gt;
 </code></pre></div>
 <div class="admonition question">
 <p class="admonition-title">Exercise</p>
@@ -978,10 +1204,10 @@
 <details class="success">
 <summary>Solution</summary>
 <p>Export the singularity cache using the <code>NXF_VER</code> environmental variable:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">export</span> <span class="nv">NXF_VER</span><span class="o">=</span><span class="m">23</span>.04.0
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">NXF_VER</span><span class="o">=</span><span class="m">23</span>.04.0
 </code></pre></div>
 <p>Check that the <code>NXF_VER</code> has been applied:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>nextflow -version
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>nextflow<span class="w"> </span>-version
 </code></pre></div>
 <p>You should see nextflow update and print the following:</p>
 <div class="highlight"><span class="filename">Output</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="go">N E X T F L O W</span>
@@ -997,7 +1223,7 @@
 <p>The behaviour of Nextflow environmental variables won't work as expected if using a NeSI Nextflow module.</p>
 </div>
 <p>Similarly, if you are using a shared resource, you may also consider including paths to where software is stored and can be accessed using the <code>NXF_SINGULARITY_CACHEDIR</code> or the <code>NXF_CONDA_CACHEDIR</code> variables:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">export</span> <span class="nv">NXF_SINGULARITY_CACHEDIR</span><span class="o">=</span>&lt;custom/path/to/conda/cache&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">NXF_SINGULARITY_CACHEDIR</span><span class="o">=</span>&lt;custom/path/to/conda/cache&gt;
 </code></pre></div>
 <div class="admonition question">
 <p class="admonition-title">Exercise</p>
@@ -1005,10 +1231,10 @@
 <details class="success">
 <summary>Solution</summary>
 <p>Export the singularity cache using the <code>NXF_SINGULARITY_CACHEDIR</code> environmental variable:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">export</span> <span class="nv">NXF_SINGULARITY_CACHEDIR</span><span class="o">=</span>/nesi/nobackup/nesi02659/nextflow-workshop
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">NXF_SINGULARITY_CACHEDIR</span><span class="o">=</span>/nesi/nobackup/nesi02659/nextflow-workshop
 </code></pre></div>
 <p>Check that the <code>NXF_SINGULARITY_CACHEDIR</code> has been exported:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">echo</span> <span class="nv">$NXF_SINGULARITY_CACHEDIR</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$NXF_SINGULARITY_CACHEDIR</span>
 </code></pre></div>
 </details>
 </div>
@@ -1022,16 +1248,16 @@
 <p>The Nextflow <code>pull</code> command will download a pipeline from a hosting platform into your global cache <code>$HOME/.nextflow/assets</code> folder. </p>
 <p>If you are pulling a project hosted in a remote code repository, you can specify its qualified name or the repository URL.</p>
 <p>The qualified name is formed by two parts - the owner name and the repository name separated by a <code>/</code> character. For example, if a Nextflow project <code>bar</code> is hosted in a GitHub repository <code>foo</code> at the address <code>http://github.com/foo/bar</code>, it could be pulled using:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>nextflow pull foo/bar
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>nextflow<span class="w"> </span>pull<span class="w"> </span>foo/bar
 </code></pre></div>
 <p>Or by using the complete URL:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>nextflow pull http://github.com/foo/bar
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>nextflow<span class="w"> </span>pull<span class="w"> </span>http://github.com/foo/bar
 </code></pre></div>
 <p>Alternatively, the Nextflow <code>clone</code> command can be used to download a pipeline into a local directory of your choice:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>nextflow clone foo/bar &lt;your/path&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>nextflow<span class="w"> </span>clone<span class="w"> </span>foo/bar<span class="w"> </span>&lt;your/path&gt;
 </code></pre></div>
 <p>The Nextflow <code>run</code> command is used to initiate the execution of a pipeline:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>nextflow run foo/bar
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>foo/bar
 </code></pre></div>
 <p>If you <code>run</code> a pipeline, it will look for a local file with the pipeline name you’ve specified. If that file does not exist, it will look for a public repository with the same name on GitHub (unless otherwise specified). If it is found, Nextflow will automatically <code>pull</code> the pipeline to your global cache and execute it.</p>
 <div class="admonition warning">
@@ -1044,7 +1270,7 @@
 <details class="success">
 <summary>Solution</summary>
 <p>Use the <code>run</code> command to execute the <a href="https://github.com/nextflow-io/hello">nextflow-io/hello</a> pipeline:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>nextflow run nextflow-io/hello
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>nextflow-io/hello
 </code></pre></div>
 <div class="highlight"><span class="filename">Output</span><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="go">N E X T F L O W  ~  version 23.04.0</span>
 <a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="go">Pulling nextflow-io/hello ...</span>
@@ -1066,11 +1292,11 @@
 <h2 id="executing-a-revision">Executing a revision<a class="headerlink" href="#executing-a-revision" title="Permanent link">&para;</a></h2>
 <p>When a Nextflow pipeline is created or updated using GitHub (or another code repository), a new revision is created. Each revision is identified by a unique number, which can be used to track changes made to the pipeline and to ensure that the same version of the pipeline is used consistently across different runs.</p>
 <p>The Nextflow <code>info</code> command can be used to view pipeline properties, such as the project name, repository, local path, main script, and revisions. The <code>*</code> indicates which revision of the pipeline you have stickied and will be executed when using the <code>run</code> command.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>nextflow info &lt;pipeline&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>nextflow<span class="w"> </span>info<span class="w"> </span>&lt;pipeline&gt;
 </code></pre></div>
 <p>It is recommended that you use the revision flag every time you execute a pipeline to ensure that the version is correct.</p>
 <p>To use a specific revision, you simply need to add it to the command line with the <code>--revision</code> or <code>-r</code> flag. For example, to run a pipeline with the <code>v1.0</code> revision, you would use the following:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>nextflow run &lt;pipeline&gt; -r v1.0
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>&lt;pipeline&gt;<span class="w"> </span>-r<span class="w"> </span>v1.0
 </code></pre></div>
 <p>Nextflow automatically provides built-in support for version control using Git. With this, users can easily manage and track changes made to a pipeline over time. A revision can be a git <code>branch</code>, <code>tag</code> or commit <code>SHA</code> number, and can be used interchangeably.</p>
 <div class="admonition question">
@@ -1079,7 +1305,7 @@
 <details class="success">
 <summary>Solution</summary>
 <p>Use the <code>nextflow run</code> command to execute the <code>nextflow-io/hello</code> pipeline with the <code>v1.1</code> revision tag:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>nextflow run nextflow-io/hello -r v1.1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>nextflow-io/hello<span class="w"> </span>-r<span class="w"> </span>v1.1
 </code></pre></div>
 <div class="highlight"><span class="filename">Output</span><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="go">N E X T F L O W  ~  version 23.04.0</span>
 <a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="go">NOTE: Your local project version looks outdated - a different revision is available in the remote repository [3b355db864]</span>
@@ -1090,7 +1316,7 @@
 <p>The warning shown above is expected as the <code>v1.1</code> pipeline revision was written using an older version of Nextflow that uses the depreciated <code>echo</code> method.</p>
 <p>As both Nextflow and pipelines are updated independently over time, pipelines and Nextflow functions can get out of sync. While most nf-core pipelines are now <code>dsl2</code> (the current way of writing pipelines), some are still written in <code>dsl1</code> and may require older version of Nextflow.</p>
 <p>You can use an older version of nextflow on the fly by adding adding the environmental variable to the start of the run command </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nv">NXF_VER</span><span class="o">=</span><span class="m">22</span>.10.0 nextflow run nextflow-io/hello -r v1.1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nv">NXF_VER</span><span class="o">=</span><span class="m">22</span>.10.0<span class="w"> </span>nextflow<span class="w"> </span>run<span class="w"> </span>nextflow-io/hello<span class="w"> </span>-r<span class="w"> </span>v1.1
 </code></pre></div>
 <div class="highlight"><span class="filename">Output</span><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="go">N E X T F L O W  ~  version 22.10.0</span>
 <a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="go">NOTE: Your local project version looks outdated - a different revision is available in the remote repository [3b355db864]</span>
@@ -1111,19 +1337,19 @@
 </div>
 <h2 id="nextflow-log">Nextflow log<a class="headerlink" href="#nextflow-log" title="Permanent link">&para;</a></h2>
 <p>It is important to keep a record of the commands you have run to generate your results. Nextflow helps with this by creating and storing metadata and logs about the run in hidden files and folders in your current directory (unless otherwise specified). This data can be used by Nextflow to generate reports. It can also be queried using the Nextflow <code>log</code> command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>nextflow log
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>nextflow<span class="w"> </span>log
 </code></pre></div>
 <p>The <code>log</code> command has multiple options to facilitate the queries and is especially useful while debugging a pipeline and inspecting execution metadata. You can view all of the possible <code>log</code> options with <code>-h</code> flag:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>nextflow log -h
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>nextflow<span class="w"> </span>log<span class="w"> </span>-h
 </code></pre></div>
 <p>To query a specific execution you can use the <code>RUN NAME</code> or a <code>SESSION ID</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>nextflow log &lt;run name&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>nextflow<span class="w"> </span>log<span class="w"> </span>&lt;run<span class="w"> </span>name&gt;
 </code></pre></div>
 <p>To get more information, you can use the <code>-f</code> option with named fields. For example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>nextflow log &lt;run name&gt; -f process,hash,duration
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>nextflow<span class="w"> </span>log<span class="w"> </span>&lt;run<span class="w"> </span>name&gt;<span class="w"> </span>-f<span class="w"> </span>process,hash,duration
 </code></pre></div>
 <p>There are many other fields you can query. You can view a full list of fields with the <code>-l</code> option:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>nextflow log -l
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>nextflow<span class="w"> </span>log<span class="w"> </span>-l
 </code></pre></div>
 <div class="admonition question">
 <p class="admonition-title">Exercise</p>
@@ -1131,13 +1357,13 @@
 <details class="success">
 <summary>Solution</summary>
 <p>Use the <code>log</code> command to get a list of you recent executions:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>nextflow log
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>nextflow<span class="w"> </span>log
 </code></pre></div>
 <div class="highlight"><span class="filename">Output</span><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="go">TIMESTAMP               DURATION        RUN NAME                STATUS  REVISION ID     SESSION ID                              COMMAND                       </span>
 <a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="go">2023-08-29 07:33:48     3.6s            stupefied_bernard       OK      1d71f857bb      f9e18b71-d689-4589-be34-8cd98c1aab2e    nextflow run nextflow-io/hello</span>
 </code></pre></div>
 <p>Query the process, hash, and script using the <code>-f</code> option for the most recent run:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>nextflow log stupefied_bernard -f process,hash,script
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>nextflow<span class="w"> </span>log<span class="w"> </span>stupefied_bernard<span class="w"> </span>-f<span class="w"> </span>process,hash,script
 </code></pre></div>
 <div class="highlight"><span class="filename">Output</span><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="go">sayHello        f3/8f827f</span>
 <a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="go">    echo &#39;Hola world!&#39;</span>
@@ -1175,7 +1401,7 @@
 <p>The <a href="https://github.com/christopher-hakkaart/nf-core-demo/tree/master"><code>christopher-hakkaartnf-core-demo</code></a> is a very small nf-core pipeline. It uses real data and bioinformatics software and requires additional configuration to run successfully.</p>
 <p>To run this example you will need to include two profiles in your execution command. Profiles are sets of configuration options that can be accessed by Nextflow. Profiles will be explained in greater detail during the <a href="../session_1/3_configuration.md">configuring nf-core pipelines</a> section of the workshop.</p>
 <p>To run this pipeline, both the <code>test</code> profile and a software management profile (such as <code>singularity</code>) are required:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>nextflow run christopher-hakkaart/nf-core-demo -profile test,singularity -r main
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>christopher-hakkaart/nf-core-demo<span class="w"> </span>-profile<span class="w"> </span>test,singularity<span class="w"> </span>-r<span class="w"> </span>main
 </code></pre></div>
 <details class="warning">
 <summary>This run requires 6GB of memory</summary>
@@ -1252,16 +1478,16 @@
 <p>In the output above, the hexadecimal numbers, such as <code>bb/f98425</code>, identify the unique task execution. These numbers are also the prefix of the <code>work</code> directories where each task is executed.</p>
 <p>You can inspect the files produced by a task by looking inside the <code>work</code> directory and using these numbers to find the task-specific execution path:</p>
 <p>The files that have been selected for publication in the <code>results</code> folder can also be explored:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>ls results
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>ls<span class="w"> </span>results
 </code></pre></div>
 <p>If you look inside the <code>work</code> directory of a <code>FASTQC</code> task, you will find the files that were staged and created when this task was executed:</p>
 <p>The <code>FASTQC</code> process runs four times, executing in a different work directories for each set of inputs. Therefore, in the previous example, the work directory [bb/f98425] represents just one of the four sets of input data that was processed.</p>
 <p>To print all the relevant paths to the screen, use the <code>-ansi-log</code> option can be used when executing your pipeline:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>nextflow run christopher-hakkaart/nf-core-demo -profile test,singularity -r main -ansi-log <span class="nb">false</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>christopher-hakkaart/nf-core-demo<span class="w"> </span>-profile<span class="w"> </span>test,singularity<span class="w"> </span>-r<span class="w"> </span>main<span class="w"> </span>-ansi-log<span class="w"> </span><span class="nb">false</span>
 </code></pre></div>
-<p>It's very likely you will execute a pipeline multiple times as you find the parameters that best suit your data. You can save a lot of spaces (and time) if you <strong>resume</strong> a pipeline from the last step that was completed successfully or unmodified.</p>
+<p>It's very likely you will execute a pipeline multiple times as you find the parameters that best suit your data. You can save a lot of space (and time) if you <strong>resume</strong> a pipeline from the last step that was completed successfully or unmodified.</p>
 <p>By adding the <code>-resume</code> option to your <code>run</code> command you can use the cache rather than re-running successful tasks:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>nextflow run christopher-hakkaart/nf-core-demo -profile test,singularity -r main -resume
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>christopher-hakkaart/nf-core-demo<span class="w"> </span>-profile<span class="w"> </span>test,singularity<span class="w"> </span>-r<span class="w"> </span>main<span class="w"> </span>-resume
 </code></pre></div>
 <p>If you <code>run</code> the <code>christopher-hakkaart/nf-core-deme</code> pipeline again without making any changes you will see that the cache is used:</p>
 <div class="highlight"><span class="filename">Output</span><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="go">[truncated]</span>
@@ -1278,13 +1504,13 @@
 <details class="success">
 <summary>Solution</summary>
 <p>Execute the pipeline for the first time (if you have not already).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>nextflow run christopher-hakkaart/nf-core-demo -profile test,singularity -r main
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>christopher-hakkaart/nf-core-demo<span class="w"> </span>-profile<span class="w"> </span>test,singularity<span class="w"> </span>-r<span class="w"> </span>main
 </code></pre></div>
 <p>Use the task ID shown for the <code>FASTQC</code> process and use it to find and <code>touch</code> the <code>sample1_R1.fastq.gz</code> file:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>touch work/b2/87370687cc7cdec037ce4f36807d32/sample1_R1.fastq.gz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>touch<span class="w"> </span>work/b2/87370687cc7cdec037ce4f36807d32/sample1_R1.fastq.gz
 </code></pre></div>
 <p>Execute the pipeline again with the <code>-resume</code> command option:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>nextflow run christopher-hakkaart/nf-core-demo -profile test,singularity -r main -resume
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>christopher-hakkaart/nf-core-demo<span class="w"> </span>-profile<span class="w"> </span>test,singularity<span class="w"> </span>-r<span class="w"> </span>main<span class="w"> </span>-resume
 </code></pre></div>
 <p>You should that 2 of 4 tasks for <code>FASTQC</code> and the <code>MULTIQC</code> task were invalid and were executed again.</p>
 <p><strong>Why did this happen?</strong></p>
@@ -1292,7 +1518,7 @@
 </details>
 </div>
 <p>Your work directory can get very big very quickly (especially if you are using full sized datasets). It is good practise to <code>clean</code> your work directory regularly. Rather than removing the <code>work</code> folder with all of it's contents, the Nextflow <code>clean</code> function allows you to selectively remove data associated with specific runs.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>nextflow clean -help
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>nextflow<span class="w"> </span>clean<span class="w"> </span>-help
 </code></pre></div>
 <p>The <code>-after</code>, <code>-before</code>, and <code>-but</code> options are all very useful to select specific runs to <code>clean</code>. The <code>-dry-run</code> option is also very useful to see which files will be removed if you were to <code>-force</code> the <code>clean</code> command.</p>
 <div class="admonition question">
@@ -1301,17 +1527,17 @@
 <details class="success">
 <summary>Solution</summary>
 <p>Use the Nextflow <code>clean</code> command with the <code>-k</code> and <code>-f</code> options:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>nextflow clean -k -f
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>nextflow<span class="w"> </span>clean<span class="w"> </span>-k<span class="w"> </span>-f
 </code></pre></div>
 </details>
 </div>
 <h2 id="listing-and-dropping-cached-pipelines">Listing and dropping cached pipelines<a class="headerlink" href="#listing-and-dropping-cached-pipelines" title="Permanent link">&para;</a></h2>
 <p>Over time, you might want to remove a stored pipelines. Nextflow also has functionality to help you to view and remove pipelines that have been pulled locally.</p>
 <p>The Nextflow <code>list</code> command prints the projects stored in your global cache folder (<code>$HOME/.nextflow/assets</code>). These are the pipelines that were pulled when you executed either of the Nextflow <code>pull</code> or <code>run</code> commands:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>nextflow list
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>nextflow<span class="w"> </span>list
 </code></pre></div>
 <p>If you want to remove a pipeline from your cache you can remove it using the Nextflow <code>drop</code> command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>nextflow drop &lt; pipeline&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>nextflow<span class="w"> </span>drop<span class="w"> </span>&lt;<span class="w"> </span>pipeline&gt;
 </code></pre></div>
 <div class="admonition question">
 <p class="admonition-title">Exercise</p>
@@ -1319,13 +1545,13 @@
 <details class="success">
 <summary>Solution</summary>
 <p>List your pipeline assets:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>nextflow list
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>nextflow<span class="w"> </span>list
 </code></pre></div>
 <p>Drop the <code>nextflow-io/hello</code> pipeline:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>nextflow drop nextflow-io/hello
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>nextflow<span class="w"> </span>drop<span class="w"> </span>nextflow-io/hello
 </code></pre></div>
 <p>Check it has been removed:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>nextflow list
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>nextflow<span class="w"> </span>list
 </code></pre></div>
 </details>
 </div>
@@ -1342,56 +1568,74 @@
 </ul>
 </div>
 
-              
-            </article>
-            
-          </div>
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-            Back to top
-          </a>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
         
       </main>
       
         <footer class="md-footer">
   
     
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
-        <a href="../0_kickoff/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Setup your environment" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
+          
+          <a href="../0_kickoff/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Setup your environment">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
               <span class="md-footer__direction">
                 Previous
               </span>
-              Setup your environment
+              <div class="md-ellipsis">
+                Setup your environment
+              </div>
             </div>
-          </div>
-        </a>
-      
-      
+          </a>
         
-        <a href="../../session_2/0_sessionOverview/" class="md-footer__link md-footer__link--next" aria-label="Next: Session two: nf-core and pipelines" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
+        
+          
+          <a href="../../session_2/0_sessionOverview/" class="md-footer__link md-footer__link--next" aria-label="Next: Session two: nf-core and pipelines">
+            <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
-              Session two: nf-core and pipelines
+              <div class="md-ellipsis">
+                Session two: nf-core and pipelines
+              </div>
             </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1417,10 +1661,12 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       
