@@ -1,12 +1,12 @@
-site_name: Genomics Aotearoa AGM Training Workshop
+site_name: Genomics Aotearoa Introduction to Nextflow Workshop
 site_author: GA & NeSI
 site_dir: public
-site_url: "https://genomicsaotearoa.github.io/AGM-workshop-2023/"
+site_url: "https://genomicsaotearoa.github.io/introduction-to-nextflow"
 
 #Repository information
 
-repo_name: GenomicsAotearoa/AGM-workshop-2023
-repo_url: https://github.com/GenomicsAotearoa/AGM-workshop-2023
+repo_name: GenomicsAotearoa/introduction-to-nextflow
+repo_url: https://github.com/GenomicsAotearoa/introduction-to-nextflow
 
 nav:
   - Home: index.md
