@@ -1,5 +1,3 @@
-# Welcome to the AGM training day 2023
-
 ## Reproducibility with Nextflow and nf-core
 
 During this workshop we will establish the fundamental ideas and skills that are required for using Nextflow as a workflow manager. We will access an existing pipeline from the free repository nf-core and run this pipeline on a test dataset as an example.
