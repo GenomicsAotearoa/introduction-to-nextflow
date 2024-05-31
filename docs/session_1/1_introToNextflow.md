@@ -215,25 +215,11 @@ Similarly, if you are using a shared resource, you may also consider including p
 
 ```bash
 export NXF_SINGULARITY_CACHEDIR=<custom/path/to/conda/cache>
+
+echo $NXF_SINGULARITY_CACHEDIR
 ```
 
-!!! question "Exercise"
 
-    Export the folder `/nesi/nobackup/nesi02659/nextflow-workshop` as the folder where remote Singularity images are stored:
-
-    ??? success "Solution"
-    
-        Export the singularity cache using the `NXF_SINGULARITY_CACHEDIR` environmental variable:
-
-        ```bash
-        export NXF_SINGULARITY_CACHEDIR=/nesi/nobackup/nesi02659/nextflow-workshop
-        ```
-
-        Check that the `NXF_SINGULARITY_CACHEDIR` has been exported:
-
-        ```bash
-        echo $NXF_SINGULARITY_CACHEDIR
-        ```
 
 !!! tip "How to manage environmental variables"
 
