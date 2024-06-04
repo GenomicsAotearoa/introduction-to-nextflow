@@ -16,3 +16,14 @@ During this workshop we will establish the fundamental ideas and skills that are
     
     Generally speaking, this workshop is designed only as an introduction to Nextflow and aims to provide a persuasive argument for the use of a workflow manager. This workshop *cannot* be exhaustive, so at the end of the workshop I propose the creation of Nextflow group where you can discuss your projects. 
     
+
+!!! calendar-days "Episodes"
+
+    1. [Introduction to Nextflow](./session_1/1_introToNextflow.md)
+    2. [`nf-core` and pipelines](./session_2/0_sessionOverview.md)
+    3. [Introduction to `nf-core`](./session_2/1_introTo_nfCore.md)
+    4. [Pipeline Structure](./session_2/2_pipelineStructure.md)
+    5. [Sarek Pipeline](./session_2/3_sarekPipeline.md)
+    6. [Configuring your run](./session_2/4_runConfiguration.md)
+    7. [Configuration Basics](./session_3/1_configFiles.md)
+    8. [Metrics and Reports](./session_3/2_configuration.md)
