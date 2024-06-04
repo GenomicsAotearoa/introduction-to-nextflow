@@ -1,4 +1,8 @@
-## Reproducibility with Nextflow and nf-core
+<center>
+# Reproducibility with Nextflow and nf-core
+</center>
+
+<center>![image](./images/nextflow_logo.png)</center>
 
 During this workshop we will establish the fundamental ideas and skills that are required for using Nextflow as a workflow manager. We will access an existing pipeline from the free repository nf-core and run this pipeline on a test dataset as an example.
 
