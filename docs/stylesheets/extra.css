@@ -956,12 +956,12 @@
 }
 .md-typeset .admonition.tags,
 .md-typeset details.tags {
-  border-color: rgb(105,105,105);
+  border-color: rgb(224, 217, 217);
 }
 .md-typeset .tags > .admonition-title,
 .md-typeset .tags > summary {
   color:rgb(35, 35, 37);
-  background-color: rgba(216, 202, 79, 0.815);
+  background-color: rgba(241, 229, 120, 0.815);
 }
 .md-typeset .tags > .admonition-title::before,
 .md-typeset .tags > summary::before {

@@ -27,3 +27,7 @@ During this workshop we will establish the fundamental ideas and skills that are
     6. [Configuring your run](./session_2/4_runConfiguration.md)
     7. [Configuration Basics](./session_3/1_configFiles.md)
     8. [Metrics and Reports](./session_3/2_configuration.md)
+
+!!! tags "Attribution notice"
+
+    The workshop content was inspired by material written for Foundational Nextflow Training and the Reproducible workflows with nf-core run by Sydney Informatics Hub, University of Sydney.
