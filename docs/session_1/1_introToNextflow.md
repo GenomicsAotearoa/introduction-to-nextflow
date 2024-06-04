@@ -66,7 +66,7 @@ Nextflow provides a robust command line interface for the management and executi
 
 Nextflow is distributed as a self-installing package and does not require any special installation procedure.
 
-!!! info "How to install Nextflow locally"
+??? tip "How to install Nextflow locally"
 
     1. Download the executable package using either `wget -qO- https://get.nextflow.io | bash` or `curl -s https://get.nextflow.io | bash`
     2. Make the binary executable on your system by running `chmod +x nextflow`
