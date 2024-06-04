@@ -107,7 +107,7 @@ Commands:
   [truncated]
 ```
 
-Options for a commands can also be viewed by appending the -help option to a Nextflow command.
+Options for specific commands can also be viewed by appending the -help option to a Nextflow command.
 
 For example, options for the the run command can be viewed:
 
